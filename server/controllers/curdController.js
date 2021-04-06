@@ -18,18 +18,17 @@ const addData = asyncHandler(async (req, res) => {
     res.send("Product added successfully");
   } else {
     res.status(503);
-    throw new Error("Something went wrong");
+    res.json({ message: "Something went wrong" });
   }
 });
 
 const dataById = asyncHandler(async (req, res) => {
-  console.log(req.params.id);
   const foundById = await Curd.findByPk(req.params.id);
   if (foundById) {
     res.send(foundById);
   } else {
     res.status(503);
-    throw new Error("Something went wrong");
+    res.json({ message: "Data not found" });
   }
 });
 
@@ -39,8 +38,23 @@ const deleteData = asyncHandler(async (req, res) => {
     res.send("Product deleted successfully");
   } else {
     res.status(503);
-    throw new Error("Something went wrong");
+    res.json({ message: "Something went wrong" });
   }
 });
 
-export { allData, addData, deleteData, dataById };
+const updateById = asyncHandler(async (req, res) => {
+  const { title, description, email } = req.body;
+  const isUpdate = await Curd.findByPk(req.params.id);
+  if (isUpdate) {
+    isUpdate.title = title;
+    isUpdate.description = description;
+    isUpdate.email = email;
+    const updateData = await isUpdate.save();
+    res.json(updateData);
+  } else {
+    res.status(503);
+    res.json({ message: "Something went wrong" });
+  }
+});
+
+export { allData, addData, deleteData, dataById, updateById };
