@@ -22,4 +22,25 @@ const addData = asyncHandler(async (req, res) => {
   }
 });
 
-export { allData, addData };
+const dataById = asyncHandler(async (req, res) => {
+  console.log(req.params.id);
+  const foundById = await Curd.findByPk(req.params.id);
+  if (foundById) {
+    res.send(foundById);
+  } else {
+    res.status(503);
+    throw new Error("Something went wrong");
+  }
+});
+
+const deleteData = asyncHandler(async (req, res) => {
+  const deleteList = await Curd.destroy({ where: { id: req.params.id } });
+  if (deleteList) {
+    res.send("Product deleted successfully");
+  } else {
+    res.status(503);
+    throw new Error("Something went wrong");
+  }
+});
+
+export { allData, addData, deleteData, dataById };
