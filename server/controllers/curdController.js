@@ -11,4 +11,15 @@ const allData = asyncHandler(async (req, res) => {
   }
 });
 
-export { allData };
+const addData = asyncHandler(async (req, res) => {
+  const { title, description, email } = req.body;
+  const addList = await Curd.create({ title, description, email });
+  if (addList) {
+    res.send("Product added successfully");
+  } else {
+    res.status(503);
+    throw new Error("Something went wrong");
+  }
+});
+
+export { allData, addData };
