@@ -2,6 +2,7 @@ import express from "express";
 import "colors";
 import connectDB from "./config/db.js";
 import CurdRoute from "./routes/curd.js";
+import userRoutes from "./routes/userRoute.js";
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 connectDB();
 // App routes
 app.use("/api/curd", CurdRoute);
+app.use("/api/users", userRoutes);
 
 app.listen(
   PORT,
