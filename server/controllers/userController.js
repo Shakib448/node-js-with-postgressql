@@ -1,6 +1,8 @@
 import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
@@ -24,7 +26,7 @@ export const authUser = asyncHandler(async (req, res) => {
 export const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
-  const userExists = await User.findOne({ email });
+  const userExists = await User.findOne({ where: { email } });
 
   if (userExists) {
     res.status(400);
@@ -34,7 +36,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   const user = await User.create({
     name,
     email,
-    password,
+    password: bcrypt.hashSync(password, 10),
   });
 
   if (user) {
