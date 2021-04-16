@@ -18,8 +18,8 @@ export const nodeMailer = () => {
         from: process.env.EMAIL,
         to: "shakiba448@gmail.com",
         subject: "Hello world",
-        text: `Hello Muktadir Bangladesh`,
-        html: "<b>Hello world?</b>",
+        text: `Hello world?`,
+        html: "<b> Hello Muktadir Bangladesh</b>",
       });
 
       console.log("Message sent: %s", info.messageId);

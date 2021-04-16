@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 // Body parser
 app.use(express.json());
 connectDB();
-nodeMailer();
+// nodeMailer();
 // App routes
 app.use("/api/curd", CurdRoute);
 app.use("/api/users", userRoutes);
