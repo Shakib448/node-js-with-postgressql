@@ -3,8 +3,8 @@ import nodemailer from "nodemailer";
 
 dotenv.config();
 
-export const emailService = (email) => {
-  console.log(email);
+export const emailService = (name, email, subject) => {
+  console.log({ name, email, subject });
   try {
     async function main() {
       let transporter = nodemailer.createTransport({
@@ -17,10 +17,13 @@ export const emailService = (email) => {
 
       let info = await transporter.sendMail({
         from: process.env.EMAIL,
-        to: "shakiba448@gmail.com",
-        subject: "Hello world",
-        text: `Hello world?`,
-        html: "<b>Hello Muktadir Bangladesh</b>",
+        to: email,
+        subject: subject,
+        html: `<h1>Hi ${name}</h1> 
+          Thanks for your valuable email We will contact you very soon.
+          Thanks & Regards
+          Muktadir Team
+        `,
       });
 
       console.log("Message sent: %s", info.messageId);

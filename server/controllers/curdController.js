@@ -61,5 +61,5 @@ export const updateById = asyncHandler(async (req, res) => {
 export const contactInfo = asyncHandler(async (req, res) => {
   const { name, email, subject, description } = req.body;
   console.log(name, email, subject, description);
-  emailService(email);
+  emailService(name, email, subject);
 });
