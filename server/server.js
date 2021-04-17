@@ -3,7 +3,6 @@ import "colors";
 import connectDB from "./config/db.js";
 import CurdRoute from "./routes/curd.js";
 import userRoutes from "./routes/userRoute.js";
-import { nodeMailer } from "./service/nodeMailer.js";
 
 const app = express();
 

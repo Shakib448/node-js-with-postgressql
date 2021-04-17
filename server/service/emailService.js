@@ -3,7 +3,8 @@ import nodemailer from "nodemailer";
 
 dotenv.config();
 
-export const emailService = () => {
+export const emailService = (email) => {
+  console.log(email);
   try {
     async function main() {
       let transporter = nodemailer.createTransport({
