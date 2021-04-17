@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 dotenv.config();
 
-export const nodeMailer = () => {
+export const emailService = () => {
   try {
     async function main() {
       let transporter = nodemailer.createTransport({
@@ -19,7 +19,7 @@ export const nodeMailer = () => {
         to: "shakiba448@gmail.com",
         subject: "Hello world",
         text: `Hello world?`,
-        html: "<b> Hello Muktadir Bangladesh</b>",
+        html: "<b>Hello Muktadir Bangladesh</b>",
       });
 
       console.log("Message sent: %s", info.messageId);
