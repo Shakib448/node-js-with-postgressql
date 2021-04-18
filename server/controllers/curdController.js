@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Curd from "../models/curdModel.js";
+import { emailService } from "../service/emailService.js";
 
 export const allData = asyncHandler(async (req, res) => {
   const data = await Curd.findAll();
@@ -55,4 +56,10 @@ export const updateById = asyncHandler(async (req, res) => {
     res.status(503);
     res.json({ message: "Something went wrong" });
   }
+});
+
+export const contactInfo = asyncHandler(async (req, res) => {
+  const { name, email, subject, description } = req.body;
+  console.log(name, email, subject, description);
+  emailService(name, email, subject);
 });
