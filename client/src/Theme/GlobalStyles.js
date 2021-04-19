@@ -52,60 +52,6 @@ const styles = (theme) => ({
     ".capitalize": {
       textTransform: "capitalize",
     },
-    ".MuiPickersModal-dialog": {
-      "&:first-child": {
-        padding: "0px !important",
-      },
-    },
-    ".MuiDialog-paperWidthSm": {
-      maxWidth: "30% !important",
-    },
-    ".MuiPickersBasePicker-pickerView": {
-      maxWidth: "none !important",
-    },
-    "p.MuiTypography-root.MuiTypography-body1.MuiTypography-alignCenter": {
-      fontSize: "1.2rem",
-      fontWeight: "bold",
-    },
-    "span.MuiTypography-root.MuiPickersCalendarHeader-dayLabel.MuiTypography-caption": {
-      fontSize: "1rem",
-      fontWeight: "bold",
-    },
-    ".MuiInputBase-root.MuiInput-root.MuiInputBase-formControl.MuiInput-formControl.MuiInputBase-adornedEnd ": {
-      fontSize: "large",
-      fontWeight: "bold",
-    },
-    "label#date-picker-dialog-label": {
-      fontSize: "large",
-      fontWeight: "bold",
-    },
-    ".MuiInputLabel-outlined": {
-      fontFamily: "Poppins, sans-serif !important",
-      fontSize: "14.5px !important",
-      fontWeight: "bold !important",
-    },
-    ".MuiAccordion-root:before": {
-      height: "2px !important",
-      position: "absolute !important",
-      top: "70px !important",
-      opacity: "0 !important",
-    },
-    ".MuiAccordion-root.Mui-expanded:before": {
-      background: "lightgray !important",
-      opacity: "1 !important",
-    },
-    ".MuiAccordionSummary-content.Mui-expanded": {
-      margin: "0px !important",
-    },
-    ".MuiAccordionSummary-content": {
-      margin: "0px !important",
-    },
-    ".MuiAccordionDetails-root": {
-      padding: "0px !important",
-    },
-    ".MuiAccordionSummary-root": {
-      padding: "5px 0px !important",
-    },
   },
 });
 
