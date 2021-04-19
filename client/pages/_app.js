@@ -7,6 +7,7 @@ import GlobalStyle from "../src/Theme/GlobalStyles";
 import { motion, AnimatePresence } from "framer-motion";
 import Router from "next/router";
 import NProgress from "nprogress";
+import Navigation from "../src/Components/Navigation/Navigation";
 
 const appVariants = {
   pageInitial: {
@@ -38,6 +39,7 @@ function MyApp({ Component, pageProps, router }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <GlobalStyle />
+      <Navigation />
       <AnimatePresence>
         <motion.div
           key={router.route}
