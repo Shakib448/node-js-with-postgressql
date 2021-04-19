@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node server",
-    "server": "nodemon serve"
+    "server": "nodemon serve",
+    "client": "npm run dev --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
