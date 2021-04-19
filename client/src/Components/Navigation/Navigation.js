@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { Box, ButtonGroup, Container } from "@material-ui/core";
 import clsx from "clsx";
 import MobileNavigation from "./MobileNavigation";
+import { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    color: "#2DDE8D",
+    color: "#fff",
   },
   linkButtonHover: {
     transition: "all .5s",
@@ -37,10 +38,23 @@ const useStyles = makeStyles((theme) => ({
 const Navigation = () => {
   const classes = useStyles();
 
+  const [show, handleShow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else handleShow(false);
+    });
+    return () => {
+      window.addEventListener("scroll");
+    };
+  }, []);
+
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Box component="div" className={clsx(classes.root)}>
-        <AppBar position="static" color="transparent">
+        <AppBar position={`${!show ? "static" : "fixed"}`}>
           <Toolbar>
             <Typography variant="h5" className={clsx(classes.title)}>
               <Box fontWeight="fontWeightBold">AIR CNC</Box>
