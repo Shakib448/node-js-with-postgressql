@@ -1,13 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Box, ButtonGroup, Container, Grid } from "@material-ui/core";
 import clsx from "clsx";
 import MobileNavigation from "./MobileNavigation";
-// import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,26 +55,15 @@ const Navigation = () => {
                   color="inherit"
                   className={clsx(classes.linkButton)}
                 >
-                  <Box mr={2}>
-                    <Button className={clsx(classes.linkButtonHover)}>
-                      Host your Home
-                    </Button>
-                  </Box>
-                  <Box mr={2}>
-                    <Button className={clsx(classes.linkButtonHover)}>
-                      Host your experience
-                    </Button>
-                  </Box>
-                  <Box mr={2}>
-                    <Button className={clsx(classes.linkButtonHover)}>
-                      Help
-                    </Button>
-                  </Box>
-                  <Box mr={2}>
-                    <Button className={clsx(classes.linkButtonHover)}>
-                      Log in
-                    </Button>
-                  </Box>
+                  {router.map((item, index) => (
+                    <Box mr={2} key={index}>
+                      <Link href={item.route}>
+                        <Button className={clsx(classes.linkButtonHover)}>
+                          {item.routeName}
+                        </Button>
+                      </Link>
+                    </Box>
+                  ))}
                 </ButtonGroup>
                 <MobileNavigation />
               </Grid>
@@ -86,5 +74,14 @@ const Navigation = () => {
     </Box>
   );
 };
+
+const router = [
+  { routeName: "Home", route: "/home" },
+  { routeName: "About us", route: "/home" },
+  { routeName: "Accomodation", route: "/home" },
+  { routeName: "Gallery", route: "/home" },
+  { routeName: "Blog", route: "/home" },
+  { routeName: "Contact", route: "/home" },
+];
 
 export default Navigation;
