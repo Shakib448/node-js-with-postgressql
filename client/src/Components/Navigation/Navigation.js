@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
   linkButtonHover: {
     transition: "all .5s",
     "&:hover": {
-      background: "#91DAFE",
-      color: "#fff",
+      background: "transparent",
+      color: "#91DAFE !important",
     },
   },
 
@@ -36,19 +36,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Navigation = () => {
   const classes = useStyles();
-
-  // const [show, handleShow] = useState(false);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 100) {
-  //       handleShow(true);
-  //     } else handleShow(false);
-  //   });
-  //   return () => {
-  //     window.addEventListener("scroll");
-  //   };
-  // }, []);
 
   return (
     <Box component="div" className={clsx(classes.root)}>

@@ -6,13 +6,14 @@ const styles = (theme) => ({
       outline: 0,
     },
     ".MuiTypography-root": {
-      fontFamily: "Poppins, sans-serif !important",
-      textTransform: "none !important",
+      font: "500 12px/60px Poppins, sans-serif !important",
+      color: "#222222 !important",
+      textTransform: "uppercase !important",
     },
     ".MuiButtonBase-root": {
-      fontFamily: "Poppins, sans-serif !important",
-      fontWeight: "bold ",
-      textTransform: "none !important",
+      font: "500 12px/60px Poppins, sans-serif !important",
+      color: "#222222 !important",
+      textTransform: "uppercase !important",
     },
     ".container": {
       width: "100%",
