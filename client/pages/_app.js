@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import React, { useEffect } from "react";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/Theme/Theme";
 import GlobalStyle from "../src/Theme/GlobalStyles";
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps, router }) {
     }
   }, []);
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <GlobalStyle />
       <Navigation />
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps, router }) {
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 
