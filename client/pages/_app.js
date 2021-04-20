@@ -7,6 +7,8 @@ import GlobalStyle from "../src/Theme/GlobalStyles";
 import { motion, AnimatePresence } from "framer-motion";
 import Router from "next/router";
 import Navigation from "../src/Components/Navigation/Navigation";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 const appVariants = {
   pageInitial: {
@@ -20,6 +22,12 @@ const appVariants = {
   },
   pageExit: { y: "-100vh", transition: { ease: "easeInOut", duration: 1 } },
 };
+
+NProgress.configure({ showSpinner: false });
+
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps, router }) {
   useEffect(() => {
