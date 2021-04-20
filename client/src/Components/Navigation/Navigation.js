@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import { Box, ButtonGroup, Container } from "@material-ui/core";
 import clsx from "clsx";
 import MobileNavigation from "./MobileNavigation";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,28 +33,32 @@ const useStyles = makeStyles((theme) => ({
     background: "linear-gradient(90deg, #2BDE8C, #78EF4E)",
     color: "#fff",
   },
+  appBar: {
+    transition: 1,
+    background: "white !important",
+  },
 }));
 
 const Navigation = () => {
   const classes = useStyles();
 
-  const [show, handleShow] = useState(false);
+  // const [show, handleShow] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        handleShow(true);
-      } else handleShow(false);
-    });
-    return () => {
-      window.addEventListener("scroll");
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     if (window.scrollY > 100) {
+  //       handleShow(true);
+  //     } else handleShow(false);
+  //   });
+  //   return () => {
+  //     window.addEventListener("scroll");
+  //   };
+  // }, []);
 
   return (
-    <Container maxWidth="md">
-      <Box component="div" className={clsx(classes.root)}>
-        <AppBar position={`${!show ? "static" : "fixed"}`}>
+    <Box component="div" className={clsx(classes.root)}>
+      <AppBar position="fixed">
+        <Container maxWidth="md">
           <Toolbar>
             <Typography variant="h5" className={clsx(classes.title)}>
               <Box fontWeight="fontWeightBold">AIR CNC</Box>
@@ -90,9 +94,9 @@ const Navigation = () => {
             </ButtonGroup>
             <MobileNavigation />
           </Toolbar>
-        </AppBar>
-      </Box>
-    </Container>
+        </Container>
+      </AppBar>
+    </Box>
   );
 };
 
