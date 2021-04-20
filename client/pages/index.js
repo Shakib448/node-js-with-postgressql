@@ -1,10 +1,10 @@
-import { Typography } from "@material-ui/core";
 import Layout from "../src/Components/Layout/Layout";
+import Banner from "../src/Components/Common/Banner";
 
 const Home = () => {
   return (
     <Layout title="Welcome to Royal">
-      <Typography variant="h5">Welcome</Typography>
+      <Banner />
     </Layout>
   );
 };
