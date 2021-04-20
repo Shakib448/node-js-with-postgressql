@@ -12,15 +12,13 @@ const useStyles = makeStyles((theme) => ({
 const Banner = () => {
   const classes = useStyles();
   return (
-    <section className={clsx(style.banner__area)}>
-      <Grid container className={clsx(style.banner__bg)}>
-        <Grid container justify="center" alignItems="center">
-          <Typography variant="h5" className={clsx(classes.textColor)}>
-            AWAY FROM MONOTONOUS LIFE
-          </Typography>
-        </Grid>
+    <Grid container className={clsx(style.banner__bg)}>
+      <Grid container justify="center" alignItems="center">
+        <Typography variant="h5" className={clsx(classes.textColor)}>
+          AWAY FROM MONOTONOUS LIFE
+        </Typography>
       </Grid>
-    </section>
+    </Grid>
   );
 };
 
