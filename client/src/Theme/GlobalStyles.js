@@ -6,12 +6,12 @@ const styles = (theme) => ({
       outline: 0,
     },
     ".MuiTypography-root": {
-      font: "500 12px/60px Poppins, sans-serif !important",
+      font: "bold 12px/60px Poppins, sans-serif !important",
       color: "#222222 !important",
       textTransform: "uppercase !important",
     },
     ".MuiButtonBase-root": {
-      font: "500 12px/60px Poppins, sans-serif !important",
+      font: "bold 12px/60px Poppins, sans-serif !important",
       color: "#222222 !important",
       textTransform: "uppercase !important",
     },
