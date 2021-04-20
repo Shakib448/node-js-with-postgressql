@@ -3,10 +3,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { Box, ButtonGroup, Container } from "@material-ui/core";
+import { Box, ButtonGroup, Container, Grid } from "@material-ui/core";
 import clsx from "clsx";
 import MobileNavigation from "./MobileNavigation";
 // import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,21 +19,15 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  title: {
-    flexGrow: 1,
-    color: "#fff",
-  },
+
   linkButtonHover: {
     transition: "all .5s",
     "&:hover": {
-      background: "#2DDE8D",
+      background: "#91DAFE",
       color: "#fff",
     },
   },
-  signUpBtn: {
-    background: "linear-gradient(90deg, #2BDE8C, #78EF4E)",
-    color: "#fff",
-  },
+
   appBar: {
     transition: 1,
     background: "white !important",
@@ -60,39 +55,44 @@ const Navigation = () => {
       <AppBar position="fixed">
         <Container maxWidth="md">
           <Toolbar>
-            <Typography variant="h5" className={clsx(classes.title)}>
-              <Box fontWeight="fontWeightBold">AIR CNC</Box>
-            </Typography>
-            <ButtonGroup color="inherit" className={clsx(classes.linkButton)}>
-              <Box mr={2}>
-                <Button className={clsx(classes.linkButtonHover)}>
-                  Host your Home
-                </Button>
-              </Box>
-              <Box mr={2}>
-                <Button className={clsx(classes.linkButtonHover)}>
-                  Host your experience
-                </Button>
-              </Box>
-              <Box mr={2}>
-                <Button className={clsx(classes.linkButtonHover)}>Help</Button>
-              </Box>
-              <Box mr={2}>
-                <Button className={clsx(classes.linkButtonHover)}>
-                  Log in
-                </Button>
-              </Box>
-              <Box mr={2}>
-                <Button
-                  className={clsx(classes.signUpBtn)}
+            <Grid container justify="space-between" alignItems="center">
+              <Grid item>
+                <Image
+                  src="/image/Logo.png"
+                  alt="Picture of Logo"
+                  width={128}
+                  height={24}
+                />
+              </Grid>
+              <Grid item>
+                <ButtonGroup
                   color="inherit"
-                  variant="contained"
+                  className={clsx(classes.linkButton)}
                 >
-                  Sign up
-                </Button>
-              </Box>
-            </ButtonGroup>
-            <MobileNavigation />
+                  <Box mr={2}>
+                    <Button className={clsx(classes.linkButtonHover)}>
+                      Host your Home
+                    </Button>
+                  </Box>
+                  <Box mr={2}>
+                    <Button className={clsx(classes.linkButtonHover)}>
+                      Host your experience
+                    </Button>
+                  </Box>
+                  <Box mr={2}>
+                    <Button className={clsx(classes.linkButtonHover)}>
+                      Help
+                    </Button>
+                  </Box>
+                  <Box mr={2}>
+                    <Button className={clsx(classes.linkButtonHover)}>
+                      Log in
+                    </Button>
+                  </Box>
+                </ButtonGroup>
+                <MobileNavigation />
+              </Grid>
+            </Grid>
           </Toolbar>
         </Container>
       </AppBar>
