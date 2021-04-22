@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     background: "white !important",
+    padding: "5px 0px",
   },
 }));
 
