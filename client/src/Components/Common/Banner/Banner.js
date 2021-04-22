@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title1: {
     color: "#fff",
-    fontSize: "70px",
+    fontSize: "60px",
     lineHeight: "60px",
     fontWeight: "700",
     textTransform: "uppercase",
@@ -32,11 +32,19 @@ const Banner = () => {
     <Grid container className={clsx(style.banner__bg)}>
       <Grid container justify="center" alignItems="center" direction="column">
         <Box mb={2}>
-          <Typography variant="h6" className={clsx(classes.subtitle)}>
+          <Typography
+            variant="h6"
+            align="center"
+            className={clsx(classes.subtitle)}
+          >
             AWAY FROM MONOTONOUS LIFE
           </Typography>
         </Box>
-        <Typography variant="h2" className={clsx(classes.title1)}>
+        <Typography
+          align="center"
+          variant="h2"
+          className={clsx(classes.title1)}
+        >
           <Box fontWeight="fontWeightBold">Relax Your Mind</Box>
         </Typography>
         <Box mb={2} mt={2}>
