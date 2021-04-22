@@ -26,9 +26,11 @@ const useStyles = makeStyles((theme) => ({
       color: "#91DAFE !important",
     },
   },
-
   appBar: {
-    transition: 1,
+    background: "transparent !important",
+    boxShadow: "none",
+  },
+  container: {
     background: "white !important",
   },
 }));
@@ -38,8 +40,8 @@ const Navigation = () => {
 
   return (
     <Box component="div" className={clsx(classes.root)}>
-      <AppBar position="fixed">
-        <Container maxWidth="md">
+      <AppBar position="fixed" className={clsx(classes.appBar)}>
+        <Container maxWidth="md" className={clsx(classes.container)}>
           <Toolbar>
             <Grid container justify="space-between" alignItems="center">
               <Grid item>

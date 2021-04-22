@@ -11,6 +11,7 @@ const styles = (theme) => ({
     ".MuiButton-root": {
       fontFamily: "'Poppins', sans-serif; !important",
       textTransform: "uppercase !important",
+      fontSize: "12px",
     },
     ".MuiTypography-body2": {
       fontFamily: "'Poppins', sans-serif; !important",
