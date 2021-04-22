@@ -7,7 +7,6 @@ const styles = (theme) => ({
     },
     ".MuiTypography-root": {
       font: "bold bold 12px/60px  'Poppins', sans-serif !important",
-      textTransform: "uppercase",
     },
     ".MuiButtonBase-root": {
       font: "bold 12px/60px 'Poppins', sans-serif !important",
