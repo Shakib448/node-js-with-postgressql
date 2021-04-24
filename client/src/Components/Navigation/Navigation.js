@@ -57,6 +57,8 @@ const Navigation = () => {
                 <ButtonGroup
                   color="inherit"
                   className={clsx(classes.linkButton)}
+                  disableRipple={true}
+                  fullWidth={true}
                 >
                   {router.map((item, index) => (
                     <Box mr={2} key={index}>
