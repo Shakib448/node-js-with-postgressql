@@ -1,4 +1,12 @@
-import { makeStyles, Grid, Box, Typography } from "@material-ui/core";
+import {
+  makeStyles,
+  Grid,
+  Box,
+  Typography,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+} from "@material-ui/core";
 import React from "react";
 import clsx from "clsx";
 
@@ -18,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
       color: "#F3C300",
     },
   },
+  formControl: {
+    width: "100%",
+  },
 }));
 
 const Footer = () => {
@@ -30,7 +41,7 @@ const Footer = () => {
         spacing={2}
         className={clsx(classes.content)}
       >
-        <Grid item md={3} lg={3} sm={12}>
+        <Grid item md={3} lg={3} sm={12} xs={12}>
           <Grid container direction="column">
             <Typography variant="h6" style={{ color: "white" }}>
               ABOUT AGENCY
@@ -39,7 +50,7 @@ const Footer = () => {
               variant="subtitle2"
               style={{ color: "#727272", fontWeight: "300" }}
             >
-              <Box mt={2} pr={2}>
+              <Box mt={2} pr={3}>
                 The world has become so fast paced that people don’t want to
                 stand by reading a page of information, they would much rather
                 look at a presentation and understand the message. It has come
@@ -48,7 +59,7 @@ const Footer = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={3} lg={3} sm={12}>
+        <Grid item md={2} lg={2} sm={12} xs={12}>
           <Typography variant="h6" style={{ color: "white" }}>
             NAVIGATION LINK
           </Typography>
@@ -81,7 +92,55 @@ const Footer = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item md={3} lg={3} sm={12}></Grid>
+        <Box pl={10}></Box>
+        <Grid item md={3} lg={3} sm={12} xs={12}>
+          <Grid container direction="column">
+            <Typography variant="h6" style={{ color: "white" }}>
+              NEWSLETTER
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              style={{ color: "#727272", fontWeight: "300" }}
+            >
+              <Box mt={2}>
+                For business professionals caught between high OEM price and
+                mediocre print and graphic output,
+              </Box>
+            </Typography>
+            <Box mt={2}>
+              <FormControl
+                variant="outlined"
+                className={clsx(classes.formControl)}
+              >
+                <InputLabel
+                  htmlFor="outlined-adornment-Email"
+                  style={{ color: "white", fontSize: "14px" }}
+                >
+                  <Typography variant="subtitle2">Email Address</Typography>
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-Email"
+                  // type={values.showPassword ? 'text' : 'password'}
+                  // value={values.password}
+                  // onChange={handleChange('password')}
+                  // endAdornment={
+                  // <InputAdornment position="end">
+                  //   <IconButton
+                  //     aria-label="toggle password visibility"
+                  //     onClick={handleClickShowPassword}
+                  //     onMouseDown={handleMouseDownPassword}
+                  //     edge="end"
+                  //   >
+                  //     {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  //   </IconButton>
+                  // </InputAdornment>
+                  // }
+                  labelWidth={102}
+                />
+              </FormControl>
+            </Box>
+          </Grid>
+        </Grid>
       </Grid>
     </footer>
   );
