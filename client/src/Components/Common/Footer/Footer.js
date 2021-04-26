@@ -52,8 +52,30 @@ const Footer = () => {
             NAVIGATION LINK
           </Typography>
           <Box mt={2}>
-            <Grid container md={6} lg={6} sm={12}></Grid>
-            <Grid container md={6} lg={6} sm={12}></Grid>
+            <Grid container direction="row">
+              <Grid container md={4} lg={4} sm={12}>
+                <Typography
+                  variant="subtitle2"
+                  style={{ color: "#727272", fontWeight: "300" }}
+                >
+                  <Box mb={2}>Home</Box>
+                  <Box mb={2}>Home</Box>
+                  <Box mb={2}>Home</Box>
+                  <Box mb={2}>Home</Box>
+                </Typography>
+              </Grid>
+              <Grid container md={4} lg={4} sm={12}>
+                <Typography
+                  variant="subtitle2"
+                  style={{ color: "#727272", fontWeight: "300" }}
+                >
+                  <Box mb={2}>Home</Box>
+                  <Box mb={2}>Home</Box>
+                  <Box mb={2}>Home</Box>
+                  <Box mb={2}>Home</Box>
+                </Typography>
+              </Grid>
+            </Grid>
           </Box>
         </Grid>
         <Grid item md={3} lg={3} sm={12}></Grid>
