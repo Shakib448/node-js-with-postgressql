@@ -39,7 +39,7 @@ const Footer = () => {
               variant="subtitle2"
               style={{ color: "#727272", fontWeight: "300" }}
             >
-              <Box mt={2} pr={2}>
+              <Box mt={2} pr={3}>
                 The world has become so fast paced that people don’t want to
                 stand by reading a page of information, they would much rather
                 look at a presentation and understand the message. It has come
@@ -48,7 +48,7 @@ const Footer = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={3} lg={3} sm={12}>
+        <Grid item md={3} lg={3} sm={12} xs={12}>
           <Typography variant="h6" style={{ color: "white" }}>
             NAVIGATION LINK
           </Typography>
