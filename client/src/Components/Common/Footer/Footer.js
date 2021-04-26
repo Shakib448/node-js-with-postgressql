@@ -1,4 +1,12 @@
-import { makeStyles, Grid, Box, Typography } from "@material-ui/core";
+import {
+  makeStyles,
+  Grid,
+  Box,
+  Typography,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+} from "@material-ui/core";
 import React from "react";
 import clsx from "clsx";
 
@@ -17,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "#F3C300",
     },
+  },
+  formControl: {
+    width: "100%",
   },
 }));
 
@@ -96,6 +107,38 @@ const Footer = () => {
                 mediocre print and graphic output,
               </Box>
             </Typography>
+            <Box mt={2}>
+              <FormControl
+                variant="outlined"
+                className={clsx(classes.formControl)}
+              >
+                <InputLabel
+                  htmlFor="outlined-adornment-Email"
+                  style={{ color: "white", fontSize: "14px" }}
+                >
+                  <Typography variant="subtitle2">Email Address</Typography>
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-Email"
+                  // type={values.showPassword ? 'text' : 'password'}
+                  // value={values.password}
+                  // onChange={handleChange('password')}
+                  // endAdornment={
+                  // <InputAdornment position="end">
+                  //   <IconButton
+                  //     aria-label="toggle password visibility"
+                  //     onClick={handleClickShowPassword}
+                  //     onMouseDown={handleMouseDownPassword}
+                  //     edge="end"
+                  //   >
+                  //     {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  //   </IconButton>
+                  // </InputAdornment>
+                  // }
+                  labelWidth={102}
+                />
+              </FormControl>
+            </Box>
           </Grid>
         </Grid>
       </Grid>

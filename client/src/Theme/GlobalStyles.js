@@ -16,6 +16,10 @@ const styles = (theme) => ({
     ".MuiTypography-body2": {
       fontFamily: "'Poppins', sans-serif; !important",
     },
+    ".MuiInputBase-root": {
+      fontFamily: "'Poppins', sans-serif; !important",
+      color: "white",
+    },
     ".container": {
       width: "100%",
       paddingRight: theme.spacing(4),
@@ -53,6 +57,15 @@ const styles = (theme) => ({
 
     ".capitalize": {
       textTransform: "capitalize",
+    },
+    ".MuiOutlinedInput-notchedOutline": {
+      borderColor: "#F3C300",
+      "&:hover": {
+        borderColor: "#F3C300",
+      },
+    },
+    ".MuiInput-input": {
+      paddingLeft: "10px !important",
     },
   },
 });
