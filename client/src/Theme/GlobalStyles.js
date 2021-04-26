@@ -60,12 +60,17 @@ const styles = (theme) => ({
     },
     ".MuiOutlinedInput-notchedOutline": {
       borderColor: "#F3C300",
-      "&:hover": {
-        borderColor: "#F3C300",
-      },
     },
+
     ".MuiInput-input": {
       paddingLeft: "10px !important",
+    },
+    ".MuiOutlinedInput-root": {
+      "&:hover": {
+        ".MuiOutlinedInput-notchedOutline": {
+          borderColor: "#F3C300 !important",
+        },
+      },
     },
   },
 });
