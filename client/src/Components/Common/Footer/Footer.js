@@ -48,7 +48,7 @@ const Footer = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={3} lg={3} sm={12} xs={12}>
+        <Grid item md={2} lg={2} sm={12} xs={12}>
           <Typography variant="h6" style={{ color: "white" }}>
             NAVIGATION LINK
           </Typography>
@@ -81,7 +81,23 @@ const Footer = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item md={3} lg={3} sm={12} xs={12}></Grid>
+        <Box pl={10}></Box>
+        <Grid item md={3} lg={3} sm={12} xs={12}>
+          <Grid container direction="column">
+            <Typography variant="h6" style={{ color: "white" }}>
+              NEWSLETTER
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              style={{ color: "#727272", fontWeight: "300" }}
+            >
+              <Box mt={2}>
+                For business professionals caught between high OEM price and
+                mediocre print and graphic output,
+              </Box>
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
     </footer>
   );
