@@ -30,7 +30,7 @@ const Footer = () => {
         spacing={2}
         className={clsx(classes.content)}
       >
-        <Grid item md={3} lg={3} sm={12}>
+        <Grid item md={3} lg={3} sm={12} xs={12}>
           <Grid container direction="column">
             <Typography variant="h6" style={{ color: "white" }}>
               ABOUT AGENCY
@@ -81,7 +81,7 @@ const Footer = () => {
             </Grid>
           </Box>
         </Grid>
-        <Grid item md={3} lg={3} sm={12}></Grid>
+        <Grid item md={3} lg={3} sm={12} xs={12}></Grid>
       </Grid>
     </footer>
   );
