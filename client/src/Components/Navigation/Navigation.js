@@ -26,10 +26,13 @@ const useStyles = makeStyles((theme) => ({
       color: "#91DAFE !important",
     },
   },
-
   appBar: {
-    transition: 1,
+    background: "transparent !important",
+    boxShadow: "none",
+  },
+  container: {
     background: "white !important",
+    padding: "5px 0px",
   },
 }));
 
@@ -38,8 +41,8 @@ const Navigation = () => {
 
   return (
     <Box component="div" className={clsx(classes.root)}>
-      <AppBar position="fixed">
-        <Container maxWidth="md">
+      <AppBar position="fixed" className={clsx(classes.appBar)}>
+        <Container maxWidth="md" className={clsx(classes.container)}>
           <Toolbar>
             <Grid container justify="space-between" alignItems="center">
               <Grid item>
@@ -54,6 +57,8 @@ const Navigation = () => {
                 <ButtonGroup
                   color="inherit"
                   className={clsx(classes.linkButton)}
+                  disableRipple={true}
+                  fullWidth={true}
                 >
                   {router.map((item, index) => (
                     <Box mr={2} key={index}>

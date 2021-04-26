@@ -9,6 +9,7 @@ import Router from "next/router";
 import Navigation from "../src/Components/Navigation/Navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import Footer from "../src/Components/Common/Footer/Footer";
 
 const appVariants = {
   pageInitial: {
@@ -52,6 +53,7 @@ function MyApp({ Component, pageProps, router }) {
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
+      <Footer />
     </MuiThemeProvider>
   );
 }
