@@ -65,12 +65,9 @@ const styles = (theme) => ({
     ".MuiInput-input": {
       paddingLeft: "10px !important",
     },
-    ".MuiOutlinedInput-root": {
-      "&:hover": {
-        ".MuiOutlinedInput-notchedOutline": {
-          borderColor: "#F3C300 !important",
-        },
-      },
+
+    ".MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#F3C300 !important",
     },
   },
 });
