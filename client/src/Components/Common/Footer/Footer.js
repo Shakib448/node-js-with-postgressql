@@ -127,20 +127,13 @@ const Footer = () => {
                 <OutlinedInput
                   id="outlined-adornment-Email"
                   type="text"
-                  // value={values.password}
-                  // onChange={handleChange('password')}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
                         aria-label="toggle password visibility"
-                        // onClick={handleClickShowPassword}
-                        // onMouseDown={handleMouseDownPassword}
                         edge="end"
                       >
-                        <SendIcon
-                          className={clsx(classes.icon)}
-                          style={{ fontSize: 30 }}
-                        />
+                        <SendIcon className={clsx(classes.icon)} />
                       </IconButton>
                     </InputAdornment>
                   }
