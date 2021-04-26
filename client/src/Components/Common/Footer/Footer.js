@@ -6,9 +6,12 @@ import {
   FormControl,
   InputLabel,
   OutlinedInput,
+  InputAdornment,
+  IconButton,
 } from "@material-ui/core";
 import React from "react";
 import clsx from "clsx";
+import SendIcon from "@material-ui/icons/Send";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     width: "100%",
+  },
+  icon: {
+    color: "#F3C300",
   },
 }));
 
@@ -120,21 +126,24 @@ const Footer = () => {
                 </InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-Email"
-                  // type={values.showPassword ? 'text' : 'password'}
+                  type="text"
                   // value={values.password}
                   // onChange={handleChange('password')}
-                  // endAdornment={
-                  // <InputAdornment position="end">
-                  //   <IconButton
-                  //     aria-label="toggle password visibility"
-                  //     onClick={handleClickShowPassword}
-                  //     onMouseDown={handleMouseDownPassword}
-                  //     edge="end"
-                  //   >
-                  //     {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                  //   </IconButton>
-                  // </InputAdornment>
-                  // }
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        // onClick={handleClickShowPassword}
+                        // onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        <SendIcon
+                          className={clsx(classes.icon)}
+                          style={{ fontSize: 30 }}
+                        />
+                      </IconButton>
+                    </InputAdornment>
+                  }
                   labelWidth={102}
                 />
               </FormControl>
