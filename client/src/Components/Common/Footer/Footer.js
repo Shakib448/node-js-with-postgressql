@@ -1,10 +1,4 @@
-import {
-  Container,
-  makeStyles,
-  Grid,
-  Box,
-  Typography,
-} from "@material-ui/core";
+import { makeStyles, Grid, Box, Typography } from "@material-ui/core";
 import React from "react";
 import clsx from "clsx";
 
@@ -16,6 +10,13 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     padding: `${theme.spacing(4)}px 0px`,
+  },
+  navLink: {
+    cursor: "pointer",
+    transition: ".5s",
+    "&:hover": {
+      color: "#F3C300",
+    },
   },
 }));
 
@@ -38,7 +39,7 @@ const Footer = () => {
               variant="subtitle2"
               style={{ color: "#727272", fontWeight: "300" }}
             >
-              <Box mt={2}>
+              <Box mt={2} pr={2}>
                 The world has become so fast paced that people don’t want to
                 stand by reading a page of information, they would much rather
                 look at a presentation and understand the message. It has come
@@ -58,10 +59,11 @@ const Footer = () => {
                   variant="subtitle2"
                   style={{ color: "#727272", fontWeight: "300" }}
                 >
-                  <Box mb={2}>Home</Box>
-                  <Box mb={2}>Home</Box>
-                  <Box mb={2}>Home</Box>
-                  <Box mb={2}>Home</Box>
+                  {nav1.map((item, index) => (
+                    <Box mb={2} className={clsx(classes.navLink)} key={index}>
+                      {item.route}
+                    </Box>
+                  ))}
                 </Typography>
               </Grid>
               <Grid container md={4} lg={4} sm={12}>
@@ -69,10 +71,11 @@ const Footer = () => {
                   variant="subtitle2"
                   style={{ color: "#727272", fontWeight: "300" }}
                 >
-                  <Box mb={2}>Home</Box>
-                  <Box mb={2}>Home</Box>
-                  <Box mb={2}>Home</Box>
-                  <Box mb={2}>Home</Box>
+                  {nav2.map((item, index) => (
+                    <Box mb={2} className={clsx(classes.navLink)} key={index}>
+                      {item.route}
+                    </Box>
+                  ))}
                 </Typography>
               </Grid>
             </Grid>
@@ -83,5 +86,19 @@ const Footer = () => {
     </footer>
   );
 };
+
+const nav1 = [
+  { route: "Home", to: "/" },
+  { route: "Feature", to: "/" },
+  { route: "Service", to: "/" },
+  { route: "Portfolio", to: "/" },
+];
+
+const nav2 = [
+  { route: "Team", to: "/" },
+  { route: "Pricing", to: "/" },
+  { route: "Blog", to: "/" },
+  { route: "Contact", to: "/" },
+];
 
 export default Footer;
