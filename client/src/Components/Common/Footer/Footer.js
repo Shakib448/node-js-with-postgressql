@@ -12,6 +12,7 @@ import {
 import React from "react";
 import clsx from "clsx";
 import SendIcon from "@material-ui/icons/Send";
+import { useForm } from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,6 +40,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
   const classes = useStyles();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <footer className={clsx(classes.root)}>
       <Grid
@@ -114,32 +122,38 @@ const Footer = () => {
               </Box>
             </Typography>
             <Box mt={2}>
-              <FormControl
-                variant="outlined"
-                className={clsx(classes.formControl)}
-              >
-                <InputLabel
-                  htmlFor="outlined-adornment-Email"
-                  style={{ color: "white", fontSize: "14px" }}
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <FormControl
+                  variant="outlined"
+                  className={clsx(classes.formControl)}
                 >
-                  <Typography variant="subtitle2">Email Address</Typography>
-                </InputLabel>
-                <OutlinedInput
-                  id="outlined-adornment-Email"
-                  type="text"
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        edge="end"
-                      >
-                        <SendIcon className={clsx(classes.icon)} />
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  labelWidth={102}
-                />
-              </FormControl>
+                  <InputLabel
+                    htmlFor="outlined-adornment-Email"
+                    style={{ color: "white", fontSize: "14px" }}
+                  >
+                    <Typography variant="subtitle2">Email Address</Typography>
+                  </InputLabel>
+                  <OutlinedInput
+                    id="outlined-adornment-Email"
+                    type="email"
+                    inputProps={{
+                      ...register("email"),
+                    }}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          edge="end"
+                          type="submit"
+                        >
+                          <SendIcon className={clsx(classes.icon)} />
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    labelWidth={102}
+                  />
+                </FormControl>
+              </form>
             </Box>
           </Grid>
         </Grid>
