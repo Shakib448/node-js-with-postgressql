@@ -6,6 +6,7 @@ import {
   Box,
 } from "@material-ui/core";
 import clsx from "clsx";
+import HotelBook from "./HotelBook";
 
 const useStyles = makeStyles((theme) => ({
   title: {},
@@ -28,57 +29,8 @@ const HotelAccommodation = () => {
           </Typography>
         </Grid>
       </Box>
-      <Box pt={8} pb={8}>
-        <Grid container justify="center" direction="column">
-          <Typography variant="h4" align="center">
-            <Box fontWeight="fontWeightBold">Hotel Accommodation</Box>
-          </Typography>
-          <Typography variant="subtitle1" align="center">
-            <Box mt={1} mb={1}>
-              We all live in an age that belongs to the young at heart. Life
-              that is becoming extremely fast,
-            </Box>
-          </Typography>
-        </Grid>
-      </Box>
-      <Box pt={8} pb={8}>
-        <Grid container justify="center" direction="column">
-          <Typography variant="h4" align="center">
-            <Box fontWeight="fontWeightBold">Hotel Accommodation</Box>
-          </Typography>
-          <Typography variant="subtitle1" align="center">
-            <Box mt={1} mb={1}>
-              We all live in an age that belongs to the young at heart. Life
-              that is becoming extremely fast,
-            </Box>
-          </Typography>
-        </Grid>
-      </Box>
-      <Box pt={8} pb={8}>
-        <Grid container justify="center" direction="column">
-          <Typography variant="h4" align="center">
-            <Box fontWeight="fontWeightBold">Hotel Accommodation</Box>
-          </Typography>
-          <Typography variant="subtitle1" align="center">
-            <Box mt={1} mb={1}>
-              We all live in an age that belongs to the young at heart. Life
-              that is becoming extremely fast,
-            </Box>
-          </Typography>
-        </Grid>
-      </Box>
-      <Box pt={8} pb={8}>
-        <Grid container justify="center" direction="column">
-          <Typography variant="h4" align="center">
-            <Box fontWeight="fontWeightBold">Hotel Accommodation</Box>
-          </Typography>
-          <Typography variant="subtitle1" align="center">
-            <Box mt={1} mb={1}>
-              We all live in an age that belongs to the young at heart. Life
-              that is becoming extremely fast,
-            </Box>
-          </Typography>
-        </Grid>
+      <Box mt={2} mb={2}>
+        <HotelBook />
       </Box>
     </Container>
   );
