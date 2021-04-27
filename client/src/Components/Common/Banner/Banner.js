@@ -1,6 +1,8 @@
 import { Grid, makeStyles, Typography, Box } from "@material-ui/core";
 import clsx from "clsx";
 import style from "./Banner.module.scss";
+import { Parallax } from "react-scroll-parallax";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   subtitle: {
@@ -29,8 +31,14 @@ const useStyles = makeStyles((theme) => ({
 const Banner = () => {
   const classes = useStyles();
   return (
-    <Grid container className={clsx(style.banner__bg)}>
-      <Grid container justify="center" alignItems="center" direction="column">
+    <Grid
+      container
+      className={clsx(style.banner__bg)}
+      justify="center"
+      alignItems="center"
+      direction="column"
+    >
+      <Parallax className="custom-class" y={[-80, 80]} tagOuter="figure">
         <Box mb={2}>
           <Typography
             variant="h6"
@@ -59,7 +67,7 @@ const Banner = () => {
             low as $.17 each.
           </Typography>
         </Box>
-      </Grid>
+      </Parallax>
     </Grid>
   );
 };

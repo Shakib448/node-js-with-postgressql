@@ -10,6 +10,7 @@ import Navigation from "../src/Components/Navigation/Navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import Footer from "../src/Components/Common/Footer/Footer";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const appVariants = {
   pageInitial: {
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps, router }) {
       <CssBaseline />
       <GlobalStyle />
       <Navigation />
+
       <AnimatePresence>
         <motion.div
           key={router.route}
@@ -50,7 +52,9 @@ function MyApp({ Component, pageProps, router }) {
           animate="pageAnimate"
           exit="pageExit"
         >
-          <Component {...pageProps} />
+          <ParallaxProvider>
+            <Component {...pageProps} />
+          </ParallaxProvider>
         </motion.div>
       </AnimatePresence>
       <Footer />
