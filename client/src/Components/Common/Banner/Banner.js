@@ -38,7 +38,7 @@ const Banner = () => {
       alignItems="center"
       direction="column"
     >
-      <Parallax className="custom-class" y={[-80, 80]} tagOuter="figure">
+      <Parallax y={[-80, 80]} tagOuter="figure">
         <Box mb={2}>
           <Typography
             variant="h6"
