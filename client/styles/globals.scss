@@ -2,6 +2,14 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background: #fff !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
 }
 
 a {

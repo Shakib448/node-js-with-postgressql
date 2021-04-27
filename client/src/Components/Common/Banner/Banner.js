@@ -13,7 +13,7 @@ const Banner = () => {
       alignItems="center"
       direction="column"
     >
-      <Parallax y={[-80, 80]} tagOuter="figure">
+      <Parallax y={[-40, 40]} tagOuter="figure">
         <BannerContent />
       </Parallax>
     </Grid>
