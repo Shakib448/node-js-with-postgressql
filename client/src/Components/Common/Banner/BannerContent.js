@@ -1,4 +1,4 @@
-import { makeStyles, Typography, Box } from "@material-ui/core";
+import { makeStyles, Typography, Box, Button, Grid } from "@material-ui/core";
 import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +22,15 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "24px",
     padding: "10px 0px 20px",
     color: "#fff",
+  },
+  btn: {
+    background: "#F2C201",
+    padding: `${theme.spacing(1)}px ${theme.spacing(4)}px`,
+    fontSize: "14px",
+    color: "#fff",
+    "&:hover": {
+      background: "#F2C201",
+    },
   },
 }));
 const BannerContent = () => {
@@ -52,6 +61,13 @@ const BannerContent = () => {
           confused at the <br /> difference in price. You may see some for as
           low as $.17 each.
         </Typography>
+        <Grid container justify="center">
+          <Box mt={2}>
+            <Button variant="contained" className={clsx(classes.btn)}>
+              GET STARTED
+            </Button>
+          </Box>
+        </Grid>
       </Box>
     </>
   );
